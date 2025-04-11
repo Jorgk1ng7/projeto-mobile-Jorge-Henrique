@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Image, Platform, Pressable } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -6,6 +6,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { router } from 'expo-router';
 
 export default function TabTwoScreen() {
   return (
@@ -20,27 +21,52 @@ export default function TabTwoScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Pix</ThemedText>
       </ThemedView>
-      <ThemedText></ThemedText>
-      <Collapsible title="Transferir Pix">
+      <ThemedText><ThemedText type="subtitle">
+          <Pressable
+            onPress={() => { router.push('http://www.nubank.com.br');
+
+              console.log('You tapped the button!');
+            }}
+            style={{
+              backgroundColor: "#841584",
+              padding: 6,
+              borderRadius: 100,
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+            }}
+          >
+            <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Ler QR Code</ThemedText>
+          </Pressable></ThemedText></ThemedText>
         <ThemedText>
           <ThemedText type="defaultSemiBold"></ThemedText> {' '}
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <ThemedText>
           <ThemedText type="defaultSemiBold"></ThemedText>{' '}
-
         </ThemedText>
-      </Collapsible>
-      <Collapsible title="Selecionar Banco">
         <ThemedText>
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
-      </Collapsible>
-      <Collapsible title="Nome Completo, CPF ou CNPJ">
         <ThemedText>
           <ThemedText type="defaultSemiBold"></ThemedText>
           <ThemedText type="defaultSemiBold"></ThemedText>
+          <Pressable
+            onPress={() => { router.push('http://www.bmw.com');
 
+              console.log('You tapped the button!');
+            }}
+            style={{
+              backgroundColor: "#841584",
+              padding: 6,
+              borderRadius: 100,
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+            }}
+          >
+            <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Pix Copia e Cola </ThemedText>
+          </Pressable>
           <ThemedText type="defaultSemiBold"></ThemedText>
           <ThemedText style={{ fontFamily: 'SpaceMono' }}>
           </ThemedText>
@@ -48,9 +74,6 @@ export default function TabTwoScreen() {
         <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
           <ThemedText type="link"></ThemedText>
         </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Agendar">
-      </Collapsible>
       {Platform.select({
         ios: (
           <ThemedText>

@@ -52,13 +52,46 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Transferir</ThemedText>
+        <ThemedText type="subtitle"></ThemedText>
         <ThemedText>
+        <ThemedText type="subtitle">
+          <Pressable
+            onPress={() => { router.push('/explore');
 
+              console.log('You tapped the button!');
+            }}
+            style={{
+              backgroundColor: "#841584",
+              padding: 6,
+              borderRadius: 100,
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 80,
+              marginTop: -5
+            }}
+          >
+            <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Transferir</ThemedText>
+          </Pressable></ThemedText>
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Meus cartões</ThemedText>
+        <ThemedText type="subtitle"></ThemedText><ThemedText type="subtitle">
+          <Pressable
+            onPress={() => { router.push('/explore');
+
+              console.log('You tapped the button!');
+            }}
+            style={{
+              backgroundColor: "#841584",
+              padding: 4,
+              borderRadius: 100,
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 80,
+            }}
+          >
+            <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Cartões</ThemedText>
+          </Pressable></ThemedText>
         <ThemedText>
           {' '}
           <ThemedText type="defaultSemiBold"></ThemedText> {' '}
